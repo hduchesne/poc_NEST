@@ -1,2 +1,19 @@
+<nestmix = 'http://www.jahia.org/nestpoc/mix/1.0'>
+<nestnt = 'http://www.jahia.org/nestpoc/nt/1.0'>
 <jnt = 'http://www.jahia.org/jahia/nt/1.0'>
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+
+[nestmix:nestComponent] > jmix:droppableContent mixin
+
+
+[nestnt:nestNews] > jnt:content, mix:title, nestmix:nestComponent
+ - jcr:title (string) internationalized mandatory
+ - desc (string, richtext) internationalized
+ - date (date) = now()
+ - buttonText (string) internationalized
+ + * (nestnt:galleryImg)
+
+
+[nestnt:galleryImg] > jnt:content, mix:title
+ - jcr:title (string) internationalized
+ - image (weakreference, picker[type='image']) < 'jmix:image'
