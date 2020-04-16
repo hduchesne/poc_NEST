@@ -27,6 +27,7 @@
 <c:set var="images" value="${jcr:getChildrenOfType(currentNode, 'nestnt:galleryImg')}"/>
 <c:set var="galleryImgs" value="${currentNode.properties['nestGalleryImg']}"/>
 
+
 <!-- Card Start -->
 <div class="card">
     <div class="row ">
@@ -38,7 +39,26 @@
                     ${functions:abbreviate(functions:removeHtmlTags(newsBody.string),400,450,'...')}
                 </p>
                 <br/>
-                <a href="#" class="mt-auto btn btn-primary  ">${newsButtonText.string}</a>
+                <c:set var="linkType" value="${currentNode.properties.linkType.string}" />
+                <c:set var="linkTarget" value="${currentNode.properties.linkTarget.string}" />
+
+                <c:choose>
+                   <c:when test="${linkType eq 'internalLink'}">
+                       <c:set var="internalLinkNode" value="${currentNode.properties.internalLink.node}"/>
+                       <c:choose>
+                           <c:when test="${! empty internalLinkNode}">
+                                <c:url var="linkUrl" value="${internalLinkNode.url}"/>
+                           </c:when>
+                        </c:choose>
+                   </c:when>
+                    <c:when test="${linkType eq 'externalLink'}">
+                      <c:url var="linkUrl" value="${currentNode.properties.externalLink.string}"/>
+                  </c:when>
+                   <c:when test="${linkType eq 'self'}">
+                        <c:url var="linkUrl" value="${currentNode.url}"/>
+                   </c:when>
+                </c:choose>
+                <a href="${linkUrl}" class="mt-auto btn btn-primary  ">${newsButtonText.string}</a>
                 <br/>
 
             </div>
