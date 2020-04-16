@@ -1,19 +1,22 @@
+<bootstrap4mix = 'http://www.jahia.org/bootstrap4/mix/1.0'>
+<jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<mix = 'http://www.jcp.org/jcr/mix/1.0'>
 <nestmix = 'http://www.jahia.org/nestpoc/mix/1.0'>
 <nestnt = 'http://www.jahia.org/nestpoc/nt/1.0'>
-<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
-<jmix = 'http://www.jahia.org/jahia/mix/1.0'>
 
-[nestmix:nestComponent] > jmix:droppableContent mixin
 
+[nestmix:nestComponent] > jmix:droppableContent, jmix:editorialContent mixin
+
+
+[nestnt:nestGalleryImg] > jnt:content, mix:title
+ - jcr:title (string) internationalized
+ - image (weakreference, picker[type='image']) < 'jmix:image'
 
 [nestnt:nestNews] > jnt:content, mix:title, nestmix:nestComponent
  - jcr:title (string) internationalized mandatory
  - desc (string, richtext) internationalized
  - date (date) = now()
  - buttonText (string) internationalized
- + * (nestnt:galleryImg)
+ - nestGalleryImg (weakreference, picker[type='image']) multiple i18n
 
-
-[nestnt:galleryImg] > jnt:content, mix:title
- - jcr:title (string) internationalized
- - image (weakreference, picker[type='image']) < 'jmix:image'
