@@ -13,10 +13,23 @@
  - jcr:title (string) internationalized
  - image (weakreference, picker[type='image']) < 'jmix:image'
 
-[nestnt:nestNews] > jnt:content, mix:title, nestmix:nestComponent
+[nestnt:nestNews] > jnt:content, mix:title, nestmix:linkTo, nestmix:nestComponent
  - jcr:title (string) internationalized mandatory
  - desc (string, richtext) internationalized
  - date (date) = now()
  - buttonText (string) internationalized
  - nestGalleryImg (weakreference, picker[type='image']) multiple i18n
 
+//*** CONTENT LINKER //
+[nestmix:linkTo] mixin
+// - linkType (string, choicelist[nestLinkTypeInitializer,resourceBundle]) = 'internalLink' autocreated indexed=no < 'internalLink', 'externalLink', 'self'
+ - linkType (string, choicelist[nestLinkTypeInitializer,resourceBundle]) indexed=no < 'internalLink', 'externalLink', 'self'
+ - linkTarget (string, choicelist[resourceBundle]) = _blank autocreated indexed=no < '_blank', '_self', '_parent', '_top'
+[nestmix:internalLink] > jmix:templateMixin mixin
+ extends = nestmix:linkTo
+ - internalLink (weakreference, picker[type='editoriallink']) < 'jmix:droppableContent', 'jnt:page', 'jnt:file'
+
+[nestmix:externalLink] > jmix:templateMixin mixin
+ extends = nestmix:linkTo
+ - externalLink (string) = 'https://'
+// CONTENT LINKER ***//
