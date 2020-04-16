@@ -1,16 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <nest-template j:dependencies="default"
-                        j:installedModules="nest-template"
-                        j:modulePriority="0"
-                        j:moduleType="templatesSet"
-                        j:title="Templates for NEST PoC"
-                        jcr:primaryType="jnt:module">
+        <nest-template j:dependencies="animate bootstrap4-components bootstrap4-core default font-awesome jquery popperjs"
+                     j:installedModules="nest-template"
+                     j:modulePriority="0"
+                     j:moduleType="templatesSet"
+                     j:title="Templates for NEST PoC"
+                     jcr:primaryType="jnt:module">
                 
                 <portlets jcr:primaryType="jnt:portletFolder"/>
                 <files jcr:primaryType="jnt:folder"/>
-                <contents jcr:primaryType="jnt:contentFolder"/>
+                <contents jcr:primaryType="jnt:contentFolder">
+                    <template jcr:primaryType="jnt:contentFolder">
+                        <j:translation_en jcr:language="en"
+                                 jcr:mixinTypes="mix:title"
+                                 jcr:primaryType="jnt:translation"
+                                 jcr:title="template"/>
+                        <navbar jcr:primaryType="jnt:contentFolder">
+                            <j:translation_en jcr:language="en"
+                                    jcr:mixinTypes="mix:title"
+                                    jcr:primaryType="jnt:translation"
+                                    jcr:title="navbar"/>
+                            <navbar addContainerWithinTheNavbar="true"
+                          addLoginButton="true"
+                          divClass="collapse navbar-collapse"
+                          j:view="nest"
+                          jcr:mixinTypes="bootstrap4mix:advancedNavbar bootstrap4mix:brand jmix:renderable"
+                          jcr:primaryType="bootstrap4nt:navbar"
+                          loginMenuULClass="navbar-nav flex-row ml-md-auto d-none d-md-flex"
+                          navClass="navbar navbar-expand-lg navbar-light"
+                          root="homePage">
+                                <j:translation_fr brandText="Nest"
+                                       jcr:language="fr"
+                                       jcr:primaryType="jnt:translation"/>
+                                <j:translation_de brandText="Nest"
+                                       jcr:language="de"
+                                       jcr:primaryType="jnt:translation"/>
+                                <j:translation_fr_BE brandText="Nest"
+                                          jcr:language="fr_BE"
+                                          jcr:primaryType="jnt:translation"/>
+                                <j:translation_pt brandText="Nest"
+                                       jcr:language="pt"
+                                       jcr:primaryType="jnt:translation"/>
+                                <j:translation_en brandText="Nest"
+                                       jcr:language="en"
+                                       jcr:primaryType="jnt:translation"/>
+                                <j:translation_it brandText="Nest"
+                                       jcr:language="it"
+                                       jcr:primaryType="jnt:translation"/>
+                                <j:translation_da brandText="Nest"
+                                       jcr:language="da"
+                                       jcr:primaryType="jnt:translation"/>
+                                <j:translation_es brandText="Nest"
+                                       jcr:language="es"
+                                       jcr:primaryType="jnt:translation"/>
+                                <j:translation_de_DE brandText="Nest"
+                                          jcr:language="de_DE"
+                                          jcr:primaryType="jnt:translation"/>
+                            </navbar>
+                        </navbar>
+                    </template>
+                </contents>
                 <templates jcr:primaryType="jnt:templatesFolder">
                     <files jcr:primaryType="jnt:folder">
                         <themes jcr:primaryType="jnt:folder">
@@ -18,12 +68,17 @@
                         </themes>
                     </files>
                     <contents jcr:primaryType="jnt:contentFolder"/>
-                    <base j:theme="/modules/nest-template/templates/files/themes/default"
-                  j:view="nest-template"
+                    <base j:theme="#/modules/nest-template/templates/files/themes/default"
+                  j:view="nest"
                   jcr:mixinTypes="jmix:theme"
                   jcr:primaryType="jnt:template">
                         <home jcr:primaryType="jnt:pageTemplate"/>
                         <simple jcr:primaryType="jnt:pageTemplate"/>
+                        <headercontent jcr:primaryType="jnt:contentList">
+                            <layout-and-grid jcr:mixinTypes="bootstrap4mix:createAbsoluteAreas"
+                                   jcr:primaryType="bootstrap4nt:grid"
+                                   level="0"/>
+                        </headercontent>
                     </base>
                     <content-template j:applyOn="jnt:content"
                               j:hiddenTemplate="true"
