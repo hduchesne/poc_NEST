@@ -24,7 +24,6 @@
 <jcr:nodeProperty node="${currentNode}" name="desc" var="newsBody"/>
 <jcr:nodeProperty node="${currentNode}" name="date" var="newsDate"/>
 <jcr:nodeProperty node="${currentNode}" name="buttonText" var="newsButtonText"/>
-<c:set var="images" value="${jcr:getChildrenOfType(currentNode, 'nestnt:galleryImg')}"/>
 <c:set var="galleryImgs" value="${currentNode.properties['nestGalleryImg']}"/>
 
 
@@ -58,7 +57,7 @@
                         <c:url var="linkUrl" value="${currentNode.url}"/>
                    </c:when>
                 </c:choose>
-                <a href="${linkUrl}" class="mt-auto btn btn-primary  ">${newsButtonText.string}</a>
+                <a href="${linkUrl}" class="mt-auto btn btn-primary" target="${linkTarget}">${newsButtonText.string}</a>
                 <br/>
 
             </div>
@@ -77,7 +76,7 @@
                 <c:forEach items="${galleryImgs}" var="galImage" varStatus="status">
                     <div class="carousel-item ${status.first?' active':''}">
 
-                        <img class="card-img d-block" src="${galImage.node.url}" alt="${galImage.node.path}">
+                        <img class="card-img d-block" src="${galImage.node.url}" alt="${galImage.node.name}">
 
                     </div>
                 </c:forEach>
