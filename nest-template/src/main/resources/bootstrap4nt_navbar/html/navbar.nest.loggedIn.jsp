@@ -10,6 +10,27 @@
 <%--<template:addResources type="javascript" resources="popper.min.js"/>--%>
 <%--<template:addResources type="javascript" resources="bootstrap.min.js"/>--%>
 
+<template:addResources type="javascript" resources="vendor/handlebars.runtime.min.js"/>
+<template:addResources type="javascript" resources="templates/userinfo.precompiled.js"/>
+<template:addResources type="javascript" resources="userdata.js"/>
+
+<script type="text/javascript">
+    $(function() {
+        // Handlebars.registerHelper("formatDate", (dateAsString) => {
+        //     var date = new Date(dateAsString);
+        //     return (date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear();
+        // });
+
+        $(".profile-loaded-subscriber").bind("profileLoaded", (e, data) => {
+            var target = $(".profile-loaded-subscriber > .profile-data");
+            var template = Handlebars.templates.userinfo;
+            target.html(template(data.profileProperties));
+        });
+    });
+</script>
+
+
+
 <c:set var="siteNode" value="${renderContext.site}"/>
 <c:choose>
     <c:when test="${jcr:isNodeType(siteNode, 'bootstrap4mix:siteBrand')}">
@@ -90,7 +111,7 @@
 
             <c:if test="${addLoginButton}">
 <%--                <template:include view="hidden.login"/>--%>
-                <template:include view="hidden.nest.login"/>
+                <template:include view="hidden.nest.loggedIn"/>
             </c:if>
 
             <template:include view="hidden.nest.search"/>

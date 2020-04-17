@@ -1,0 +1,24 @@
+<div class="col-md-4 ">
+    {{#if profilePictureUrl}}
+        <img src='{{profilePictureUrl}}' class='user-avatar img-fluid'/>
+    {{else}}
+        <img src='/modules/jexperience/images/default-profile.jpg' class='user-avatar img-fluid'/>
+    {{/if}}
+</div>
+<div class="col-md-8">
+    <div class="row">
+      <div class="col text-uppercase text-primary">
+        {{firstName}} {{lastName}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        Pension ID:  {{pensionID}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        Last logged in: today
+      </div>
+    </div>
+</div>
