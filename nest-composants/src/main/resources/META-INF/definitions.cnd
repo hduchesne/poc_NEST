@@ -25,6 +25,7 @@
 // - linkType (string, choicelist[nestLinkTypeInitializer,resourceBundle]) = 'internalLink' autocreated indexed=no < 'internalLink', 'externalLink', 'self'
  - linkType (string, choicelist[nestLinkTypeInitializer,resourceBundle]) indexed=no < 'internalLink', 'externalLink', 'self'
  - linkTarget (string, choicelist[resourceBundle]) = _blank autocreated indexed=no < '_blank', '_self', '_parent', '_top'
+
 [nestmix:internalLink] > jmix:templateMixin mixin
  extends = nestmix:linkTo
  - internalLink (weakreference, picker[type='editoriallink']) < 'jmix:droppableContent', 'jnt:page', 'jnt:file'
@@ -45,7 +46,22 @@
 
 [nestnt:homeBannerVideo] > jnt:content, mix:title, nestmix:nestComponent, jmix:list
  - bannerText (string, richtext) internationalized
-  - itemWidth (long) = 250 indexed=no mandatory
+ - itemWidth (long) = 250 indexed=no mandatory
  + * (nestnt:nestInternalVideo)
  + * (nestnt:nestExternalVideo)
+
+[nestnt:blockInternalLink] > jnt:content, mix:title
+- internalLink (weakreference, picker[type='editoriallink']) < 'jmix:droppableContent', 'jnt:page', 'jnt:file'
+- linkTarget (string, choicelist[resourceBundle]) = _blank autocreated indexed=no < '_blank', '_self', '_parent', '_top'
+
+[nestnt:blockExternalLink] > jnt:content, mix:title
+ - externalLink (string) = 'https://'
+ - linkTarget (string, choicelist[resourceBundle]) = _blank autocreated indexed=no < '_blank', '_self', '_parent', '_top'
+
+[nestnt:linksBlock] > jnt:content, mix:title, nestmix:nestComponent, nestmix:linkTo, jmix:list
+ - buttonText (string) internationalized
+ + * (nestnt:blockInternalLink)
+ + * (nestnt:blockExternalLink)
+
+
 

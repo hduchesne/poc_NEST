@@ -19,46 +19,17 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 
-<c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
-<c:set var="bannerText" value="${currentNode.properties['bannerText'].string}"/>
-<%--<c:set var="itemWidth" value="${currentNode.properties['itemWidth'].string}"/>--%>
-
-<%-- get the child galleryImgs --%>
-<c:set var="videos" value="${jcr:getChildrenOfType(currentNode, 'nestnt:nestExternalVideo,nestnt:nestInternalVideo')}"/>
-
-<!--Card-->
-<div class="card text-center">
 
 
-<!--Card content-->
-<div class="card-body">
-<!--Title-->
-<h2 class="card-title">${title}</h2>
-<!--Text-->
-<p class="card-text">${bannerText}</p>
+<jcr:nodeProperty node="${currentNode}" name="jcr:title" var="linkTitle"/>
+<jcr:nodeProperty node="${currentNode}" name="linkTarget" var="linkTarget"/>
+<c:set var="internalLinkNode" value="${currentNode.properties.internalLink.node}"/>
+<c:url var="linkUrl" value="${internalLinkNode.url}"/>
 
-
-<!-- Grid row -->
 <div class="row">
-
-
-    <c:forEach items="${videos}" var="video" varStatus="item">
-            <template:module node="${video}"  editable="true"/>
-    </c:forEach>
-
-
+  <div class="col-sm-9 text-left align-middle"><a href="${linkUrl}" class="" target="${linkTarget.string}">${linkTitle.string}</a></div>
+  <div class="col-sm-3 text-right align-middle"><a href="${linkUrl}" class="" target="${linkTarget.string}"><i class="fa fa-arrow-circle-right fa-w-16 fa-2x"></i></a></div>
 </div>
-<!-- Grid row -->
 
-</div>
-</div>
-<!--/.Card-->
 
-<c:if test="${renderContext.editMode}">
-    <%--
-    As only one child type is defined no need to restrict
-    if a new child type is added restriction has to be done
-    using 'nodeTypes' attribute
-    --%>
-    <template:module path="*" />
-</c:if>
+
