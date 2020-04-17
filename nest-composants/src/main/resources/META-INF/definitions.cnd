@@ -33,3 +33,19 @@
  extends = nestmix:linkTo
  - externalLink (string) = 'https://'
 // CONTENT LINKER ***//
+
+[nestnt:nestInternalVideo] > jnt:content, mix:title
+ - video (weakreference, picker[type='file']) i18n
+ - videoPoster (weakreference, picker[type='image']) < 'jmix:image'
+
+[nestnt:nestExternalVideo] > jnt:content, mix:title
+ - videoService(string, choicelist[resourceBundle]) = 'youtube' mandatory < youtube, vimeo
+ - videoId (string) i18n
+ - videoPoster (weakreference, picker[type='image']) < 'jmix:image'
+
+[nestnt:homeBannerVideo] > jnt:content, mix:title, nestmix:nestComponent, jmix:list
+ - bannerText (string, richtext) internationalized
+  - itemWidth (long) = 250 indexed=no mandatory
+ + * (nestnt:nestInternalVideo)
+ + * (nestnt:nestExternalVideo)
+
