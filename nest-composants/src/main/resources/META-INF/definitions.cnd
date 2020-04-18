@@ -64,4 +64,9 @@
  + * (nestnt:blockExternalLink)
 
 
-
+[nestnt:nestFreeBlock] > jnt:content, mix:title, nestmix:linkTo, nestmix:nestComponent
+ - jcr:title (string) internationalized
+ - desc (string, richtext) internationalized
+ - buttonText (string) internationalized
+ - textColor (string, choicelist[resourceBundle]) = 'text-primary' indexed=no < 'text-primary', 'text-secondary', 'text-success', 'text-danger', 'text-warning', 'text-info', 'text-light', 'text-dark', 'text-white'
+ - backgroundColor (string) = '#FF8200'

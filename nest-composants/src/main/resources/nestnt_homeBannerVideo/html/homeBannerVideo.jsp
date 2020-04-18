@@ -33,7 +33,7 @@
 <!--Card content-->
 <div class="card-body">
 <!--Title-->
-<h2 class="card-title">${title}</h2>
+<h1 class="card-title">${title}</h1>
 <!--Text-->
 <p class="card-text">${bannerText}</p>
 
