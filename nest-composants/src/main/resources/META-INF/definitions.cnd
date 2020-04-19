@@ -70,3 +70,11 @@
  - buttonText (string) internationalized
  - textColor (string, choicelist[resourceBundle]) = 'text-primary' indexed=no < 'text-primary', 'text-secondary', 'text-success', 'text-danger', 'text-warning', 'text-info', 'text-light', 'text-dark', 'text-white'
  - backgroundColor (string) = '#FF8200'
+
+[nestnt:dashboardBannerVideo] > jnt:content, mix:title, nestmix:nestComponent, jmix:list
+ - bannerText (string, richtext) internationalized
+ - itemWidth (long) = 250 indexed=no mandatory
+ + * (nestnt:nestFreeBlock)
+ + * (nestnt:nestInternalVideo)
+ + * (nestnt:nestExternalVideo)
+

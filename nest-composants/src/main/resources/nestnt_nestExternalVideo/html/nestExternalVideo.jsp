@@ -26,7 +26,6 @@
 <c:set var="modalId" value="modal-${rand}"/>
 
  <!-- Grid column -->
-  <div class="col-lg-4 col-md-12 mb-4">
 
     <!--Modal: Name-->
     <div class="modal fade" id="${modalId}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -78,5 +77,4 @@
            <figcaption class="figure-caption">${caption}</figcaption>
 
     </a>
-  </div>
   <!-- Grid column -->

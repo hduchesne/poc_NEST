@@ -55,7 +55,7 @@
                    </c:when>
                 </c:choose>
                 <p class="card-text text-right">
-                <a href="${linkUrl}" class="mt-auto btn btn-outline-light btn-sm" target="${linkTarget}">${newsButtonText.string}</a>
+                <a href="${linkUrl}" class="mt-auto btn btn-primary btn-outline-light btn-sm" target="${linkTarget}">${newsButtonText.string}</a>
                 </p>
 </div>
 <!-- End of card -->

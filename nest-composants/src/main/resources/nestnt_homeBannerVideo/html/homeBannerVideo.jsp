@@ -43,7 +43,10 @@
 
 
     <c:forEach items="${videos}" var="video" varStatus="item">
+      <div class="col-lg-4 col-md-12 mb-3">
+
             <template:module node="${video}"  editable="true"/>
+      </div>
     </c:forEach>
 
 
