@@ -19,6 +19,7 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 <template:addResources type="css" resources="nestNews.css"/>
+<template:addResources type="css" resources="videoButton.css"/>
 
 <c:set var="title" value="${currentNode.properties['jcr:title'].string}"/>
 <c:set var="bannerText" value="${currentNode.properties['bannerText'].string}"/>
