@@ -12,6 +12,7 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
+
 <c:set var="image" value="${currentNode.properties['videoPoster'].node}"/>
 <template:module path='${image.path}' editable='false' view='hidden.contentURL' var="imageUrl"/>
 <template:module path='${image.path}' editable='false' view='hidden.imageSize' var="imageSize"/>
@@ -72,9 +73,10 @@
     </div>
     <!--Modal: Name-->
 
-    <a>
+
+    <a class="video-thumbnail">
          <img class="img-fluid z-depth-1 rounded" src="${image.url}" itemprop="thumbnail" alt="${caption}" style="width: ${itemWidth}px" data-toggle="modal" data-target="#${modalId}"/>
            <figcaption class="figure-caption">${caption}</figcaption>
-
     </a>
+
   <!-- Grid column -->

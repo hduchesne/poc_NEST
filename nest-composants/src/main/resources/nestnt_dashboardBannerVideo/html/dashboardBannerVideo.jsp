@@ -81,7 +81,7 @@
                 <div class="carousel-inner">
                     <c:forEach items="${videos}" var="video" varStatus="status">
                          <div class="carousel-item ${status.first?' active':''}">
-                           <div class="col-md-12 mb-3">
+                           <div class="col-md-12 mb-3 text-right">
             			    <template:module node="${video}"  editable="true"/>
             			    </div>
                         </div>

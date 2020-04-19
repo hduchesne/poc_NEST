@@ -23,11 +23,13 @@
 <jcr:nodeProperty node="${currentNode}" name="desc" var="bodyText"/>
 <jcr:nodeProperty node="${currentNode}" name="backgroundColor" var="backgroundColor"/>
 <jcr:nodeProperty node="${currentNode}" name="textColor" var="textColor"/>
+<jcr:nodeProperty node="${currentNode}" name="buttonColor" var="buttonColor"/>
+
 
 
 
 <!-- Card Start -->
-<div class="card p-3 mb-2 mt-2 ${textColor}" style="background-color:${backgroundColor}">
+<div class="card p-3 mb-2 mt-2 ${textColor}" style="background-color:${backgroundColor};width:100%">
 
                 <h4 class="card-title"">${fn:escapeXml(blockTitle.string)}</h4>
                 <p class="card-text">
@@ -54,9 +56,12 @@
                         <c:url var="linkUrl" value="${currentNode.url}"/>
                    </c:when>
                 </c:choose>
+                <c:if test="${not empty newsButtonText}">
+
                 <p class="card-text text-right">
-                <a href="${linkUrl}" class="mt-auto btn btn-primary btn-outline-light btn-sm" target="${linkTarget}">${newsButtonText.string}</a>
+                <a href="${linkUrl}" class="mt-auto btn ${buttonColor} btn-outline-light btn-sm" target="${linkTarget}">${newsButtonText.string}</a>
                 </p>
+                </c:if>
 </div>
 <!-- End of card -->
 <c:if test="${renderContext.editMode}">
