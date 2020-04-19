@@ -14,6 +14,7 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
+
 <%--Get custom css--%>
 <jcr:sql var="_css_"
     sql="SELECT * FROM [jnt:file] As node WHERE ISDESCENDANTNODE (node, '${renderContext.site.path}/files/css')"/>
@@ -77,20 +78,9 @@
 <%--<div class="top-shadow ${renderContext.editMode?'edit':''}"></div>--%>
 <template:area path="pagecontent"/>
 
-<%--<footer class="site-footer" role="contentinfo">--%>
-<%--    <div class="container">--%>
-<%--        <template:area path="footercontent"/>--%>
-<%--        <div class="row">--%>
-<%--            <div class="col-12 text-md-center text-left">--%>
-<%--                <p class="copyright">--%>
-<%--                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->--%>
-<%--                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>--%>
-<%--                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->--%>
-<%--                </p>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</footer>--%>
+<footer class="site-footer" role="contentinfo">
+        <template:area path="footercontent"/>
+       </footer>
 
 <%--<template:addResources type="javascript" resources="jquery.appear.min.js" targetTag="body"/>--%>
 <%--<template:addResources type="javascript" resources="jquery.fancybox.min.js" targetTag="body"/>--%>

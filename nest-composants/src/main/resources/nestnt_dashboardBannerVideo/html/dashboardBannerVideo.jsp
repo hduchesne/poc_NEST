@@ -46,7 +46,7 @@
 <!-- Grid row -->
 <div class="row">
 
-       <div class="col-md-5 pt-5 pl-5 pr-5 pb-2">
+       <div class="col-md-5 pt-3 pl-3 pr-3 pb-1">
 
                 <div id="left-${carouselId}" class="carousel slide" data-ride="carousel">
 
@@ -69,7 +69,7 @@
 
         </div>
         <!-- Carousel start -->
-        <div class="col-md-7  pt-5 pl-5 pr-5 pb-2" style="border-left: 1px solid rgba(34, 36, 38, .1);">
+        <div class="col-md-7 pt-3 pl-3 pr-3 pb-1" style="border-left: 1px solid rgba(34, 36, 38, .1);">
            <div class="row">
                 <div class="col-md-7 px-3">
                   <p class="card-text text-left">${bannerText}</p>
