@@ -25,7 +25,7 @@
 
 
 <!-- Card Start -->
-<div class="card p-3 mb-2 mt-2">
+<div class="card p-3 mb-2 mt-2" style="width:100%">
 
                 <h4 class="card-title">${fn:escapeXml(blockTitle.string)} </h4>
                 <p class="card-text">
