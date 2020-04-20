@@ -1,0 +1,38 @@
+{
+	"metadata": {
+		"id": "olderWorkingFamily",
+		"name": "Older Working Families",
+		"description": "Older Working Families",
+		"scope": "nest",
+		"tags": [ ],
+		"systemTags": [ ],
+		"enabled": true,
+		"missingPlugins": false,
+		"hidden": false,
+		"readOnly": false
+	},
+	"condition": {
+		"parameterValues": {
+		"operator": "and",
+		"subConditions": [
+        {
+        	"parameterValues": {
+        	"propertyName": "properties.age",
+        	"comparisonOperator": "between",
+        	"propertyValuesInteger": [45,67]
+       		},
+        	"type": "profilePropertyCondition"
+        },
+        {
+        	"parameterValues": {
+        	"propertyName": "properties.maritalStatus",
+        	"comparisonOperator": "contains",
+        	"propertyValue": "Married"
+        	},
+        	"type": "profilePropertyCondition"
+        }
+        ]
+        },
+        "type": "booleanCondition"
+     }
+ }
