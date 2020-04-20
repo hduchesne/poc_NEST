@@ -57,7 +57,7 @@
                 </c:choose>
                 <c:if test="${not empty newsButtonText}">
                     <p class="card-text text-right">
-                    <a href="${linkUrl}" class="mt-auto btn ${buttonColor} btn-outline-light btn-sm" target="${linkTarget}">${newsButtonText.string}</a>
+                    <a href="${linkUrl}" class="mt-auto btn ${buttonColor} btn-outline-primary btn-sm" target="${linkTarget}">${newsButtonText.string}</a>
                     </p>
                 </c:if>
 </div>

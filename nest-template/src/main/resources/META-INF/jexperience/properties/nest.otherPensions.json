@@ -1,0 +1,15 @@
+{
+  "target": "profiles",
+  "multivalued": false,
+  "type": "string",
+  "metadata": {
+    "readOnly": false,
+    "systemTags": [
+      "hasCardDataTag",
+      "cardDataTag/_nestPensionInfo/30.1/NEST: Pension Info",
+      "positionInCard.3"
+    ],
+    "id": "otherPensions",
+    "name": "Other Pensions"
+  }
+}

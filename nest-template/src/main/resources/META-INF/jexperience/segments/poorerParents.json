@@ -1,0 +1,47 @@
+{
+
+	"condition": {
+		"parameterValues": {
+			"operator": "and",
+			"subConditions": [{
+					"parameterValues": {
+						"propertyName": "properties.kids",
+						"comparisonOperator": "greaterThan",
+						"propertyValueInteger": 0
+					},
+					"type": "profilePropertyCondition"
+				},
+				{
+					"parameterValues": {
+						"propertyName": "properties.income",
+						"comparisonOperator": "lessThan",
+						"propertyValueInteger": 23000
+					},
+					"type": "profilePropertyCondition"
+				},
+				{
+					"parameterValues": {
+						"propertyName": "properties.maritalStatus",
+						"comparisonOperator": "notContains",
+						"propertyValue": "Married"
+					},
+					"type": "profilePropertyCondition"
+				}
+			]
+		},
+		"type": "booleanCondition"
+	},
+	"metadata": {
+		"id": "poorerParents",
+		"name": "Poorer parents",
+		"description": "Parent with income less than £23000",
+		"scope": "nest",
+		"tags": [],
+		"systemTags": [],
+		"enabled": true,
+		"missingPlugins": false,
+		"hidden": false,
+		"readOnly": false
+	}
+
+}
