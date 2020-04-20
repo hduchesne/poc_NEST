@@ -25,8 +25,8 @@ $theme-colors: (
 ol.carousel-indicators {
     position: relative;
     justify-content: right;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 12px;
+    margin-right: 12px;
 }
 
 ol.carousel-indicators li {

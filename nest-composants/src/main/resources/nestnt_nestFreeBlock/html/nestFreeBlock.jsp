@@ -33,10 +33,9 @@
 
                 <h4 class="card-title"">${fn:escapeXml(blockTitle.string)}</h4>
                 <p class="card-text">
-
                     ${bodyText.string}
                 </p>
-                <br/>
+
                 <c:set var="linkType" value="${currentNode.properties.linkType.string}" />
                 <c:set var="linkTarget" value="${currentNode.properties.linkTarget.string}" />
 
@@ -57,10 +56,9 @@
                    </c:when>
                 </c:choose>
                 <c:if test="${not empty newsButtonText}">
-
-                <p class="card-text text-right">
-                <a href="${linkUrl}" class="mt-auto btn ${buttonColor} btn-outline-light btn-sm" target="${linkTarget}">${newsButtonText.string}</a>
-                </p>
+                    <p class="card-text text-right">
+                    <a href="${linkUrl}" class="mt-auto btn ${buttonColor} btn-outline-light btn-sm" target="${linkTarget}">${newsButtonText.string}</a>
+                    </p>
                 </c:if>
 </div>
 <!-- End of card -->
