@@ -21,14 +21,14 @@ templates['userinfo'] = template({"1":function(container,depth0,helpers,partials
         return undefined
     };
 
-  return "<div class=\"col-md-4 \">\n"
+  return "<div class=\"col-4\">\n"
     + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"profilePictureUrl") : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(3, data, 0),"data":data,"loc":{"start":{"line":2,"column":4},"end":{"line":6,"column":11}}})) != null ? stack1 : "")
-    + "</div>\n<div class=\"col-md-8\">\n    <div class=\"row\">\n      <div class=\"col text-uppercase text-primary\">\n        "
+    + "</div>\n<div class=\"col-8\">\n    <div class=\"row\">\n      <div class=\"col text-uppercase text-primary\">\n        "
     + alias4(((helper = (helper = lookupProperty(helpers,"firstName") || (depth0 != null ? lookupProperty(depth0,"firstName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"firstName","hash":{},"data":data,"loc":{"start":{"line":11,"column":8},"end":{"line":11,"column":21}}}) : helper)))
     + " "
     + alias4(((helper = (helper = lookupProperty(helpers,"lastName") || (depth0 != null ? lookupProperty(depth0,"lastName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"lastName","hash":{},"data":data,"loc":{"start":{"line":11,"column":22},"end":{"line":11,"column":34}}}) : helper)))
     + "\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col\">\n        Pension ID:  "
-    + alias4(((helper = (helper = lookupProperty(helpers,"pensionID") || (depth0 != null ? lookupProperty(depth0,"pensionID") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"pensionID","hash":{},"data":data,"loc":{"start":{"line":16,"column":21},"end":{"line":16,"column":34}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"nestPensionId") || (depth0 != null ? lookupProperty(depth0,"nestPensionId") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"nestPensionId","hash":{},"data":data,"loc":{"start":{"line":16,"column":21},"end":{"line":16,"column":38}}}) : helper)))
     + "\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col\">\n        Last logged in: today\n      </div>\n    </div>\n</div>";
 },"useData":true});
 })();

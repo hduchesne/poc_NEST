@@ -2,8 +2,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--@elvariable id="currentNode" type="org.jahia.services.content.JCRNodeWrapper"--%>
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
+<%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 <%--<template:addResources type="css" resources="bootstrap.min.css"/>--%>
 <%--<template:addResources type="javascript" resources="jquery.min.js"/>--%>
@@ -106,16 +108,27 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="${divClass}" id="navbar-${currentNode.identifier}">
+        <div class="${divClass} flex-column" id="navbar-${currentNode.identifier}" style="align-items: unset;flex-grow:unset;">
+
             <template:include view="basenav"/>
+            <template:include view="hidden.nest.logout"/>
+<%--            <a class="dropdown-item" href="${url.logout}" class="logout"><fmt:message key="login-form.label.logout"/></a>--%>
 
-            <c:if test="${addLoginButton}">
-<%--                <template:include view="hidden.login"/>--%>
-                <template:include view="hidden.nest.loggedIn"/>
-            </c:if>
+            <div class="flex-row d-flex justify-content-between mt-2 mb-2" style="margin-left:20px;">
+                <template:include view="hidden.nest.loggedIn.search"/>
+                <div class="align-bottom">
+                    <span class="small mr-1">A</span>
+                    A
+                    <span class="lead text-primary ml-1">A+</span>
+                </div>
+            </div>
 
-            <template:include view="hidden.nest.search"/>
         </div>
+        <c:if test="${addLoginButton}">
+            <template:include view="hidden.nest.loggedIn"/>
+        </c:if>
+
+
     <c:if test="${addContainerWithinTheNavbar}">
     </div>
     </c:if>
