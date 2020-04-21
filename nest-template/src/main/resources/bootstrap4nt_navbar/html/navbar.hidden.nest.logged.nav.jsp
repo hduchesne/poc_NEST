@@ -30,7 +30,8 @@
 
 <div class="${class} flex-column" id="navbar-${currentNode.identifier}" style="align-items: unset;flex-grow:unset;">
 
-    <template:include view="basenav"/>
+<%--    <template:include view="basenav"/>--%>
+    <template:include view="nest.basenav"/>
     <template:include view="hidden.nest.logout"/>
 
     <div class="flex-row d-flex justify-content-between mt-2 mb-2" style="margin-left:20px;">

@@ -55,7 +55,12 @@
     <c:set var="curentPageNode" value="${jcr:getParentOfType(curentPageNode, 'jmix:navMenuItem')}"/>
 </c:if>
 
+<c:set var="customRootNode" value="${currentNode.properties.customRoot.node}"/>
+
 <c:choose>
+    <c:when test="${renderContext.loggedIn && !empty customRootNode}">
+        <c:set var="rootNode" value="${customRootNode}"/>
+    </c:when>
     <c:when test="${root eq 'currentPage'}">
         <c:set var="rootNode" value="${curentPageNode}"/>
     </c:when>
@@ -66,6 +71,17 @@
         <c:set var="rootNode" value="${renderContext.site.home}"/>
     </c:otherwise>
 </c:choose>
+
+<c:choose>
+    <c:when test="${!empty customRootNode}">
+        <c:set var="redirect" value="${customRootNode.url}"/>
+    </c:when>
+    <c:otherwise>
+        <c:url var="redirect" value="${rootNode.url}"/>
+    </c:otherwise>
+</c:choose>
+<c:url var="failureRedirect" value="${rootNode.url}"/>
+
 <nav class="${navClass}">
     <c:if test="${addContainerWithinTheNavbar}">
     <div class="container">
@@ -96,6 +112,8 @@
                 <template:include view="hidden.nest.login.nav">
                     <template:param name="divClass" value="${divClass}"/>
                     <template:param name="addLoginButton" value="${addLoginButton}"/>
+                    <template:param name="redirect" value="${redirect}"/>
+                    <template:param name="failureRedirect" value="${failureRedirect}"/>
                 </template:include>
             </c:otherwise>
         </c:choose>

@@ -11,6 +11,10 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
+<c:set var="site" value="${renderContext.site.title}"/>
+<c:set var="redirect" value="${currentResource.moduleParams.redirect}"/>
+<c:set var="failureRedirect" value="${currentResource.moduleParams.failureRedirect}"/>
+
 <c:set var="showModal" value="${not empty param['loginError'] ? 'true' : 'false'}"/>
 <utility:logger level="info" value="loginError : ${param['loginError']}"/>
 
@@ -68,9 +72,11 @@
                         <h4 class="text-primary text-uppercase"><fmt:message key="login-form.title.login"/></h4>
                         <h5 class="text-primary text-uppercase">Please enter your log in details</h5>
                         <p>Enter your username and password to log in to your online account.</p>
-                        <ui:loginArea>
-<%--                        <form method="post" name="loginForm" action="/cms/login">--%>
-<%--                            <input type="hidden" name="site" value="nest">--%>
+<%--                        <ui:loginArea>--%>
+                        <form method="post" name="loginForm" action="${url.login}">
+                            <input type="hidden" name="site" value="${site}">
+                            <input type="hidden" name="redirect" value="${redirect}">
+                            <input type="hidden" name="failureRedirect" value="${failureRedirect}">
 <%--                            <input type="hidden" name="redirect" value="/sites/nest/home.html">--%>
 <%--                            <input type="hidden" name="failureRedirect" value="/sites/nest/home.html">--%>
 
@@ -87,8 +93,8 @@
                                 <span class="text-primary d-block">Reset your log in details</span>
                             </p>
                             <button type="submit" class="btn btn-primary btn-nest text-uppercase"><fmt:message key="login-form.btn.login"/></button>
-<%--                        </form>--%>
-                        </ui:loginArea>
+                        </form>
+<%--                        </ui:loginArea>--%>
                     </div>
                     <div class="col-6">
                         <template:module path="*"/>

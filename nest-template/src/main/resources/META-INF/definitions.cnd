@@ -1,2 +1,11 @@
 <jnt = 'http://www.jahia.org/jahia/nt/1.0'>
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<nestmix = 'http://www.jahia.org/nestpoc/mix/1.0'>
+<nestnt = 'http://www.jahia.org/nestpoc/nt/1.0'>
+<bootstrap4nt = 'http://www.jahia.org/bootstrap4/nt/1.0'>
+
+
+[nestmix:customHome] mixin
+ extends = bootstrap4nt:navbar
+ itemtype = content
+ - customRoot (weakreference, picker[type='page']) < 'jnt:page'
