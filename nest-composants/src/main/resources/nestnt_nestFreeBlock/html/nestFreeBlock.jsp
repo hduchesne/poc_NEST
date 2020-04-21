@@ -29,10 +29,10 @@
 
 
 <!-- Card Start -->
-<div class="card p-3 mb-2 mt-2 ${textColor}" style="background-color:${backgroundColor};width:100%">
+<div class="card p-3 mb-2 mt-2" style="background-color:${backgroundColor};width:100%">
 
-                <h4 class="card-title"">${fn:escapeXml(blockTitle.string)}</h4>
-                <p class="card-text">
+                <h4 class="card-title text-primary">${fn:escapeXml(blockTitle.string)}</h4>
+                <p class="card-text text-secondary">
                     ${bodyText.string}
                 </p>
 

@@ -79,3 +79,8 @@
  + * (nestnt:nestInternalVideo)
  + * (nestnt:nestExternalVideo)
 
+[nestnt:standardCard] > jnt:content, mix:title, nestmix:linkTo, nestmix:nestComponent
+ - jcr:title (string) internationalized
+ - cardText (string, richtext) internationalized
+ - buttonText (string) internationalized
+ - cardImage (weakreference, picker[type='image']) < 'jmix:image'

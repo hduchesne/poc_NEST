@@ -35,9 +35,9 @@
 <!--Card content-->
 <div class="card-body">
 <!--Title-->
-<h1 class="card-title">${title}</h1>
+<h1 class="card-title text-primary">${title}</h1>
 <!--Text-->
-<p class="card-text">${bannerText}</p>
+<p class="card-text text-secondary">${bannerText}</p>
 
 
 <!-- Grid row -->

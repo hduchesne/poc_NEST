@@ -26,7 +26,7 @@
 <c:set var="linkUrl" value="${currentNode.properties.externalLink.string}"/>
 
 <div class="row">
-  <div class="col-sm-9 text-left align-middle"><a href="${linkUrl}" class="" target="${linkTarget.string}">${linkTitle.string}</a></div>
+  <div class="col-sm-9 text-left align-middle"><a href="${linkUrl}" class="text-secondary" target="${linkTarget.string}">${linkTitle.string}</a></div>
   <div class="col-sm-3 text-right align-middle"><a href="${linkUrl}" class="" target="${linkTarget.string}"><i class="fa fa fa-arrow-circle-o-right fa-w-16 fa-2x"></i></a></div>
 </div>
 
