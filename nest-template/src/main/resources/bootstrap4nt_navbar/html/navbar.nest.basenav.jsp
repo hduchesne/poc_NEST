@@ -159,5 +159,12 @@
             <c:remove var="page1Url"/>
             <c:remove var="page1Title"/>
         </c:forEach>
+        <c:if test="${renderContext.loggedIn && addLoginButton}">
+            <li class="nav-item}">
+                <template:include view="hidden.nest.logout"/>
+<%--                <a class="nav-link" href="${page1Url}">${page1Title} <c:if--%>
+<%--                        test="${page1Active}"><span class="sr-only">(current)</span></c:if></a>--%>
+            </li>
+        </c:if>
     </ul>
 </c:if>

@@ -92,11 +92,18 @@ body {
     border-right:  1px solid #ced4da;
 }
 /* navbar */
+.navbar-nav .nav-item button,
 .navbar-nav .nav-item {
+    font-size:.8rem;
+    font-weight: bold;
     position: relative;
     text-transform: uppercase;
-    padding-right:20px;
-    padding-left:20px;
+    padding-right:15px;
+    padding-left:15px;
+}
+
+.navbar-brand img{
+    width:50px;
 }
 
 /*.navbar-nav .nav-item:first-child{*/
@@ -124,7 +131,7 @@ body {
     position: absolute;
     right: 100%;
     bottom: 0;
-    left: 20px;
+    left: 15px;
     height: 3px;
     content: '';
     transition: right .3s cubic-bezier(.23,1,.32,1);
@@ -133,5 +140,5 @@ body {
 
 .navbar-nav .nav-item.active:not(.dropdown):after,
 .navbar-nav .nav-item:hover:not(.dropdown):not(.nav-link):after{
-    right: 20px;
+    right: 15px;
 }
