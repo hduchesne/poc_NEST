@@ -9,6 +9,9 @@
 <template:addResources type="javascript" resources="popper.min.js"/>
 <template:addResources type="javascript" resources="bootstrap.min.js"/>
 
+<%-- TODO voir la gestion nav en mode edit --%>
+<c:set var="mode" value="${renderContext.mode}"/>
+
 <c:if test="${jcr:isNodeType(currentNode, 'bootstrap4mix:customBaseNavbar')}">
     <c:set var="ulClass" value="${currentNode.properties.ulClass.string}"/>
     <c:set var="recursive" value="${currentNode.properties.recursive.boolean}"/>
