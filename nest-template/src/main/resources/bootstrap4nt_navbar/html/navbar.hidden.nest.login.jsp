@@ -45,10 +45,6 @@
                 </button>
             </div>
 
-<%--            <ui:loginArea>--%>
-
-
-
             <div class="modal-body">
                 <div class="row">
                     <div class="col-6">
@@ -72,11 +68,11 @@
                         <h4 class="text-primary text-uppercase"><fmt:message key="login-form.title.login"/></h4>
                         <h5 class="text-primary text-uppercase">Please enter your log in details</h5>
                         <p>Enter your username and password to log in to your online account.</p>
-
-                        <form method="post" name="loginForm" action="/cms/login">
-                            <input type="hidden" name="site" value="nest">
-                            <input type="hidden" name="redirect" value="/sites/nest/home-loggedin.html">
-                            <input type="hidden" name="failureRedirect" value="/sites/nest/home.html">
+                        <ui:loginArea>
+<%--                        <form method="post" name="loginForm" action="/cms/login">--%>
+<%--                            <input type="hidden" name="site" value="nest">--%>
+<%--                            <input type="hidden" name="redirect" value="/sites/nest/home.html">--%>
+<%--                            <input type="hidden" name="failureRedirect" value="/sites/nest/home.html">--%>
 
                             <div class="form-group">
                                 <label for="username" class="text-primary text-uppercase"><fmt:message key="login-form.label.username"/></label>
@@ -91,7 +87,8 @@
                                 <span class="text-primary d-block">Reset your log in details</span>
                             </p>
                             <button type="submit" class="btn btn-primary btn-nest text-uppercase"><fmt:message key="login-form.btn.login"/></button>
-                        </form>
+<%--                        </form>--%>
+                        </ui:loginArea>
                     </div>
                     <div class="col-6">
                         <template:module path="*"/>
@@ -102,7 +99,7 @@
                     </div>
                 </div>
             </div>
-<%--            </ui:loginArea>--%>
+
             <div class="modal-footer"></div>
 
         </div>

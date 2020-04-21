@@ -85,16 +85,22 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="${divClass}" id="navbar-${currentNode.identifier}">
-            <template:include view="basenav"/>
+        <c:choose>
+            <c:when test="${renderContext.loggedIn}">
+                <template:include view="hidden.nest.logged.nav">
+                    <template:param name="divClass" value="${divClass}"/>
+                    <template:param name="addLoginButton" value="${addLoginButton}"/>
+                </template:include>
+            </c:when>
+            <c:otherwise>
+                <template:include view="hidden.nest.login.nav">
+                    <template:param name="divClass" value="${divClass}"/>
+                    <template:param name="addLoginButton" value="${addLoginButton}"/>
+                </template:include>
+            </c:otherwise>
+        </c:choose>
 
-            <c:if test="${addLoginButton}">
-<%--                <template:include view="hidden.login"/>--%>
-                <template:include view="hidden.nest.login"/>
-            </c:if>
 
-            <template:include view="hidden.nest.search"/>
-        </div>
     <c:if test="${addContainerWithinTheNavbar}">
     </div>
     </c:if>
