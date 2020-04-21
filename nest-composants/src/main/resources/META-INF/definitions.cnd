@@ -84,3 +84,4 @@
  - cardText (string, richtext) internationalized
  - buttonText (string) internationalized
  - cardImage (weakreference, picker[type='image']) < 'jmix:image'
+ - cardBodyColor (string) = '#FF8200'

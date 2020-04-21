@@ -77,7 +77,7 @@
                 </div>
                  <div class="col-md-5">
 
-            <div id="right-${carouselId}" class="carousel slide" data-ride="carousel">
+            <div id="right-${carouselId}" class="carousel slide">
 
                 <div class="carousel-inner">
                     <c:forEach items="${videos}" var="video" varStatus="status">

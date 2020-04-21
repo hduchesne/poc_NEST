@@ -16,11 +16,11 @@
                      jcr:primaryType="jnt:folder">
                   <resources jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
                              jcr:primaryType="jnt:folder">
-                     <nestnt_dashboardBannerVideo jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                     <nestnt_dashboardBannerVideo jcr:mixinTypes="jmix:hasExternalProviderExtension"
                                                   jcr:primaryType="jnt:nodeTypeFolder">
-                        <html jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
+                        <html jcr:mixinTypes="jmix:hasExternalProviderExtension"
                               jcr:primaryType="jnt:templateTypeFolder">
-                           <dashboardBannerVideo.jsp jcr:mixinTypes="jmix:sourceControl" jcr:primaryType="jnt:viewFile"/>
+                           <dashboardBannerVideo.jsp jcr:primaryType="jnt:viewFile"/>
                         </html>
                      </nestnt_dashboardBannerVideo>
                      <nestnt_nestNews jcr:mixinTypes="jmix:hasExternalProviderExtension"

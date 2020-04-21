@@ -30,11 +30,10 @@
 
 <!-- Card Start -->
 <div class="card p-3 mb-2 mt-2" style="background-color:${backgroundColor};width:100%">
+             <div class="card-body d-flex flex-column">
 
                 <h4 class="card-title text-primary">${fn:escapeXml(blockTitle.string)}</h4>
-                <p class="card-text text-secondary">
-                    ${bodyText.string}
-                </p>
+                <span class="card-text ${textColor}">${bodyText.string}</span>
 
                 <c:set var="linkType" value="${currentNode.properties.linkType.string}" />
                 <c:set var="linkTarget" value="${currentNode.properties.linkTarget.string}" />
@@ -56,10 +55,11 @@
                    </c:when>
                 </c:choose>
                 <c:if test="${not empty newsButtonText}">
-                    <p class="card-text text-right">
-                    <a href="${linkUrl}" class="mt-auto btn ${buttonColor} btn-outline-primary btn-sm" target="${linkTarget}">${newsButtonText.string}</a>
-                    </p>
+                    <span class="card-text text-right">
+                    <a href="${linkUrl}" class="mt-auto btn btn-primary btn-sm" target="${linkTarget}">${newsButtonText.string}</a>
+                    </span>
                 </c:if>
+         </div>
 </div>
 <!-- End of card -->
 <c:if test="${renderContext.editMode}">

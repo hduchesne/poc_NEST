@@ -22,10 +22,11 @@
 <jcr:nodeProperty node="${currentNode}" name="buttonText" var="ButtonText"/>
 <jcr:nodeProperty node="${currentNode}" name="cardText" var="cardText"/>
 <jcr:nodeProperty node="${currentNode}" name="cardImage" var="cardImage"/>
+<jcr:nodeProperty node="${currentNode}" name="cardBodyColor" var="cardBodyColor"/>
 
-<div class="card">
+<div class="card pb-2">
   <img class="card-img-top" src="${cardImage.node.url}" alt="${cardImage.node.name}">
-  <div class="card-body">
+  <div class="card-body" style="background-color: ${cardBodyColor}">
     <h5 class="card-title">${fn:escapeXml(cardTitle.string)}</h5>
     <p class="card-text">${cardText.string}</p>
 
@@ -50,7 +51,7 @@
                     </c:choose>
                     <c:if test="${not empty ButtonText}">
                         <p class="card-text text-right">
-                            <a href="${linkUrl}" class="btn btn-primary" target="${linkTarget}">${ButtonText.string}</a>
+                            <a href="${linkUrl}" class="mt-auto btn btn-primary" target="${linkTarget}">${ButtonText.string}</a>
                         </p>
                     </c:if>
   </div>
