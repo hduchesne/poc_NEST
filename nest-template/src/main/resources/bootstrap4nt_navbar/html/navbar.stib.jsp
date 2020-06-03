@@ -58,7 +58,7 @@
     <c:set var="curentPageNode" value="${jcr:getParentOfType(curentPageNode, 'jmix:navMenuItem')}"/>
 </c:if>
 
-<c:set var="customRootNode" value="${currentNode.properties.customRoot.node}"/>
+<%--<c:set var="customRootNode" value="${currentNode.properties.customRoot.node}"/>--%>
 
 <%--<c:set var="curentPageNode" value="${jcr:getParentOfType(curentPageNode, 'jmix:navMenuItem')}"/>--%>
 <%--<c:set var="isHomeNode" value="${renderContext.site.home.hasNode(curentPageNode.path)}"/>--%>
@@ -66,9 +66,9 @@
 <%--<utility:logger level="info" value="isHomeNode : ${isHomeNode}"/>--%>
 
 <c:choose>
-    <c:when test="${renderContext.loggedIn && !empty customRootNode}">
-        <c:set var="rootNode" value="${customRootNode}"/>
-    </c:when>
+<%--    <c:when test="${renderContext.loggedIn && !empty customRootNode}">--%>
+<%--        <c:set var="rootNode" value="${customRootNode}"/>--%>
+<%--    </c:when>--%>
     <c:when test="${root eq 'currentPage'}">
         <c:set var="rootNode" value="${curentPageNode}"/>
     </c:when>
@@ -80,15 +80,15 @@
     </c:otherwise>
 </c:choose>
 
-<c:choose>
-    <c:when test="${!empty customRootNode}">
-        <c:set var="redirect" value="${customRootNode.url}"/>
-    </c:when>
-    <c:otherwise>
-        <c:url var="redirect" value="${rootNode.url}" context="/"/>
-    </c:otherwise>
-</c:choose>
-<c:url var="failureRedirect" value="${rootNode.url}"/>
+<%--<c:choose>--%>
+<%--    <c:when test="${!empty customRootNode}">--%>
+<%--        <c:set var="redirect" value="${customRootNode.url}"/>--%>
+<%--    </c:when>--%>
+<%--    <c:otherwise>--%>
+<%--        <c:url var="redirect" value="${rootNode.url}" context="/"/>--%>
+<%--    </c:otherwise>--%>
+<%--</c:choose>--%>
+<%--<c:url var="failureRedirect" value="${rootNode.url}"/>--%>
 
 <nav class="${navClass}">
     <c:if test="${addContainerWithinTheNavbar}">
@@ -109,22 +109,36 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <c:choose>
-            <c:when test="${renderContext.loggedIn}">
-                <template:include view="hidden.nest.logged.nav">
-                    <template:param name="divClass" value="${divClass}"/>
-                    <template:param name="addLoginButton" value="${addLoginButton}"/>
-                </template:include>
-            </c:when>
-            <c:otherwise>
-                <template:include view="hidden.nest.login.nav">
-                    <template:param name="divClass" value="${divClass}"/>
-                    <template:param name="addLoginButton" value="${addLoginButton}"/>
+        <div class="${divClass}" id="navbar-${currentNode.identifier}">
+                <template:include view="basenav"/>
+<%--            <template:include view="nest.basenav"/>--%>
+
+            <c:if test="${addLoginButton}">
+                <template:include view="hidden.nest.login">
                     <template:param name="redirect" value="${redirect}"/>
                     <template:param name="failureRedirect" value="${failureRedirect}"/>
                 </template:include>
-            </c:otherwise>
-        </c:choose>
+            </c:if>
+
+            <template:include view="hidden.nest.search"/>
+        </div>
+
+<%--        <c:choose>--%>
+<%--            <c:when test="${renderContext.loggedIn}">--%>
+<%--                <template:include view="hidden.nest.logged.nav">--%>
+<%--                    <template:param name="divClass" value="${divClass}"/>--%>
+<%--                    <template:param name="addLoginButton" value="${addLoginButton}"/>--%>
+<%--                </template:include>--%>
+<%--            </c:when>--%>
+<%--            <c:otherwise>--%>
+<%--                <template:include view="hidden.nest.login.nav">--%>
+<%--                    <template:param name="divClass" value="${divClass}"/>--%>
+<%--                    <template:param name="addLoginButton" value="${addLoginButton}"/>--%>
+<%--                    <template:param name="redirect" value="${redirect}"/>--%>
+<%--                    <template:param name="failureRedirect" value="${failureRedirect}"/>--%>
+<%--                </template:include>--%>
+<%--            </c:otherwise>--%>
+<%--        </c:choose>--%>
 
 
     <c:if test="${addContainerWithinTheNavbar}">

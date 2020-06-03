@@ -107,7 +107,7 @@ body {
 }
 
 .navbar-brand img{
-    width:50px;
+    max-width:150px;
 }
 
 /*.navbar-nav .nav-item:first-child{*/
@@ -150,4 +150,12 @@ body {
 .navbar-nav .nav-item.active:after,
 .navbar-nav .nav-item:hover:not(.nav-link):after{
     right: 15px;
+}
+.section {
+    padding: 7em 0; }
+
+.stib-title {
+    color: #d62027;
+    text-transform: uppercase;
+    margin: .9em 0;
 }
