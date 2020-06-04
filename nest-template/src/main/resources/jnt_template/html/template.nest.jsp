@@ -47,7 +47,7 @@
 
     <!-- Theme Style -->
     <%--	  position is important to be sure custom css will not merged with ofthers and is loaded at the end --%>
-    <template:addResources type="css" resources="core.css" media="screen"/>
+    <template:addResources type="css" resources="stib.core.css" media="screen"/>
 
     <c:forEach items="${_css_.nodes}" var="node">
         <c:url var="customCSSUrl" value="${node.url}"/>
