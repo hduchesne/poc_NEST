@@ -79,11 +79,29 @@
                             <layout-and-grid jcr:mixinTypes="bootstrap4mix:createAbsoluteAreas"
                                    jcr:primaryType="bootstrap4nt:grid"
                                    level="0"/>
+                            <navbar addContainerWithinTheNavbar="true"
+                          addLoginButton="false"
+                          divClass="collapse navbar-collapse"
+                          j:view="stib"
+                          jcr:mixinTypes="bootstrap4mix:advancedNavbar jmix:renderable"
+                          jcr:primaryType="bootstrap4nt:navbar"
+                          loginMenuULClass="navbar-nav flex-row ml-md-auto d-none d-md-flex"
+                          navClass="navbar navbar-expand-lg navbar-light bg-light"
+                          root="homePage"/>
                         </headercontent>
                         <footercontent jcr:primaryType="jnt:contentList">
                             <footer-layout-and-grid jcr:mixinTypes="bootstrap4mix:createAbsoluteAreas"
                                           jcr:primaryType="bootstrap4nt:grid"
                                           level="0"/>
+                            <footer-grid grid="3_3_3_3"
+                               gridLayout="fixed-width"
+                               jcr:mixinTypes="bootstrap4mix:createContainer bootstrap4mix:createRow bootstrap4mix:createSection bootstrap4mix:predefinedGrid"
+                               jcr:primaryType="bootstrap4nt:grid"
+                               rowHorizontalAlignment="default"
+                               rowVerticalAlignment="default"
+                               sectionCssClass="bg-primary"
+                               sectionElement="section"
+                               typeOfGrid="predefinedGrid"/>
                         </footercontent>
                     </base>
                     <content-template j:applyOn="jnt:content"

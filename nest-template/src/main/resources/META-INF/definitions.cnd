@@ -9,3 +9,9 @@
  extends = bootstrap4nt:navbar
  itemtype = content
  - customRoot (weakreference, picker[type='page']) < 'jnt:page'
+
+
+[nestmix:btnLinkID] mixin
+ extends = bootstrap4nt:button
+ itemtype = content
+ - linkID (string) indexed=no
